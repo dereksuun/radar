@@ -5,7 +5,7 @@ Base inicial pronta com:
 - FastAPI no ar
 - Conexão com PostgreSQL
 - Estrutura mínima organizada
-- Endpoint `/health` com teste real no banco
+- Endpoint `/api/health` com teste real no banco
 
 ## Estrutura
 
@@ -40,7 +40,7 @@ uvicorn app.main:app --reload
 ## Endpoints
 
 - `GET /`
-- `GET /health`
+- `GET /api/health`
 - `GET /docs`
 
 ## Se der erro de conexão com o banco
@@ -67,4 +67,11 @@ POSTGRES_PORT=5432
 POSTGRES_DB=job_radar
 POSTGRES_USER=postgres
 POSTGRES_PASSWORD=postgres
+```
+
+## Gerar zip de entrega sem lixo
+
+```bash
+zip -r job-radar.zip . \
+  -x ".git/*" ".venv/*" "__pycache__/*" "*.pyc" ".env" ".pytest_cache/*" ".mypy_cache/*" ".DS_Store"
 ```
