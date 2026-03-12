@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: job-radar-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: job_radar
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - job_radar_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  job_radar_postgres_data:
